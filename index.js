@@ -12,5 +12,5 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use("/createShortUrl", shorten);
 app.use("/", redirect);
-
-app.listen(8000, () => console.log("Listening portNumber: 8000 "));
+const port = process.env.PORT ? process.env.PORT : 4000;
+app.listen(port, () => console.log("Listening portNumber: 8000 "));
